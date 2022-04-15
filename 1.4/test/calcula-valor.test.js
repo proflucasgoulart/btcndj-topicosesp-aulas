@@ -26,10 +26,10 @@ describe('arredondar', () => {
     
     // TESTE 01 => expect(538.456).toBeCloseTo(538.46);
     // Apesar da diferença entre os valores do TESTE 01,
-    // ele irá passar devido ao usoa da função toBeCloseTo.
+    // ele irá passar devido ao uso da função toBeCloseTo.
     
     // TESTE 02 => expect(538.456).toBeCloseTo(538.46, 3);
-    // Porém, no teste 02, o segundo parâmetro passado para a função
+    // Porém, no TESTE 02, o segundo parâmetro passado para a função
     // toBeCloseTo define uma precisão de 3 casas decimais. Nesse caso,
     // o teste comparando os mesmos valores irá falhar.
     
