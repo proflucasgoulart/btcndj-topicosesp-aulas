@@ -6,5 +6,5 @@ test('Com uma prestação o montante é igual ao capital', () => {
   const montante = calculaValor.calcularMontante(100, 0.0175, 1)
 
   // Resultado ou Compotamento esperado
-  expect(montante).toBe(1000)
+  expect(montante).toBe(100)
 })
