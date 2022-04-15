@@ -1,0 +1,1 @@
+# Testes interaticos (jest --watch)
