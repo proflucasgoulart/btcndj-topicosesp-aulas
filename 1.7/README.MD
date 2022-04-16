@@ -1,7 +1,10 @@
 # Testes interaticos (jest --watch)
 
 ## Objetivos
-- Apresentar o modo de testes interativos do jest.
+- Apresentar o modo de testes interativos do jest;
+- Implementar uma versão inicial da função para calcular as prestações;
+- Fixação da técnica de criação de testes por meio da repetição prática;
+- Proposta de mais um desafio.
 
 ## Comandos utilizados
 - jest --watch
