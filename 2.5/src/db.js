@@ -1,4 +1,4 @@
-const Sequelize = require('sequelize')
+const Sequelize = require('sequelize');
 
 const sequelize = new Sequelize({
   dialect: 'postgres',
@@ -7,62 +7,62 @@ const sequelize = new Sequelize({
   database: 'consulta_credito',
   username: 'postgres',
   password: 'mysecretpassword',
-  logging: false
-})
+  logging: false,
+});
 
-const clienteModel = (sequelize, DataTypes) => {
-  const Cliente = sequelize.define('Cliente', {
+const clienteModel = (sequelizeCliente, DataTypes) => {
+  const Cliente = sequelizeCliente.define('Cliente', {
     CPF: {
       type: DataTypes.STRING,
       allowNull: false,
       primaryKey: true,
-      unique: true
+      unique: true,
     },
     Nome: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true
-    }
-  })
+      unique: true,
+    },
+  });
 
-  return Cliente
-}
+  return Cliente;
+};
 
-const consultaModel = (sequelize, DataTypes) => {
-  const Consulta = sequelize.define('Consulta', {
+const consultaModel = (sequelizeConsulta, DataTypes) => {
+  const Consulta = sequelizeConsulta.define('Consulta', {
     Valor: {
       type: DataTypes.DOUBLE,
-      allowNull: false
+      allowNull: false,
     },
     NumPrestacoes: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: false,
     },
     Juros: {
       type: DataTypes.DOUBLE,
-      allowNull: false
+      allowNull: false,
     },
     Montante: {
       type: DataTypes.DOUBLE,
-      allowNull: false
+      allowNull: false,
     },
     Prestacoes: {
       type: DataTypes.STRING,
-      allowNull: false
-    }
-  })
+      allowNull: false,
+    },
+  });
 
-  return Consulta
-}
+  return Consulta;
+};
 
-const cliente = clienteModel(sequelize, Sequelize.DataTypes)
-const consulta = consultaModel(sequelize, Sequelize.DataTypes)
+const cliente = clienteModel(sequelize, Sequelize.DataTypes);
+const consulta = consultaModel(sequelize, Sequelize.DataTypes);
 
-cliente.hasMany(consulta, { as: 'Consultas' })
-consulta.belongsTo(cliente)
+cliente.hasMany(consulta, { as: 'Consultas' });
+consulta.belongsTo(cliente);
 
 module.exports = {
   cliente,
   consulta,
-  sequelize
-}
+  sequelize,
+};
