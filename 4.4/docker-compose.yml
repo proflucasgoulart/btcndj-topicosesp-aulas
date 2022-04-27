@@ -1,0 +1,19 @@
+version: '3'
+services:
+  nodejs:
+    image: node_consulta_credito
+    restart: always
+    build: .
+    ports:
+      - 5678
+    depends_on:
+      - db
+  db:
+    image: postgres
+    restart: always
+    volumes:
+      - ./db_consulta_credito:/var/lib/postgresql/data
+    ports:
+      - 5432
+    environment:
+      - POSTGRES_PASSWORD=mysecretpassword
