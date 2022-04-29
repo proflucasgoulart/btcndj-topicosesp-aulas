@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest --verbose",
     "lint": "eslint src/** test/** --fix",
-    "watch": "jest --watch"
+    "watch": "jest --watch",
+	"start": "node src/server.js"
   },
   "author": "",
   "license": "ISC",

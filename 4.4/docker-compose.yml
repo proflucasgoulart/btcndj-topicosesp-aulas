@@ -5,7 +5,7 @@ services:
     restart: always
     build: .
     ports:
-      - 5678
+      - "5678:5678"
     depends_on:
       - db
   db:
@@ -14,6 +14,6 @@ services:
     volumes:
       - ./db_consulta_credito:/var/lib/postgresql/data
     ports:
-      - 5432
+      - "5432:5432"
     environment:
       - POSTGRES_PASSWORD=mysecretpassword
